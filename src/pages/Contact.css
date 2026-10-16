@@ -1,0 +1,129 @@
+.contact-section {
+    min-height: var(--app-height);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+
+.bg-contact {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;          
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    
+}
+
+.contact-ticket-body {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    bottom:0;
+    
+}
+
+
+.place-text {
+    font-weight: 400;
+    color: var(--text-main);
+
+}
+
+.contact-bottom {
+    position: relative;
+    margin: 0 2rem;
+    padding-bottom: 4rem;
+}
+
+.availability-text {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size:1rem;
+    padding-bottom: 1.5rem;
+    margin: 0;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-svg {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 25%;
+    flex-shrink: 0;
+}
+
+.name-contact {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.mail-contact {
+    color: var(--text-secondary);
+    font-weight: 700;
+    margin: 0.35rem 0 0 0;
+    font-size: 1.05rem;
+}
+
+.cta-text{
+    margin-top:4rem;
+}
+.contact-links {
+    margin-top: 1.5rem;
+    display: flex;
+    
+}
+.svg-icon{
+    padding-right:1rem;
+}
+
+@media (min-width: 768px) {
+    .bg-contact {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;          
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    
+}
+    .header-bottom{
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .availability-text{
+        font-size: 1.5rem;
+    }
+    .place-text{
+        font-size: 1.25rem;
+    }
+    .contact-svg {
+        width: 110px;
+        height: 110px;
+    }
+
+    .name-contact {
+        font-size: 1.35rem;
+    }
+
+    .mail-contact {
+        font-size: 1.25rem;
+    }
+}

@@ -1,0 +1,2039 @@
+.project-detail-container { 
+    padding: 1rem 1rem 5rem 1rem;
+    height: var(--app-height);
+    overflow-y: auto; 
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth; 
+    scrollbar-width: none; 
+    position: relative; 
+    box-sizing: border-box; 
+    background-color: var(--card); 
+} 
+
+/* FIRST SCREEN*/
+.bg-project-detail-svg, .bg-project-detail-final-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 83vh;          
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+
+}
+.scroll-section { 
+    scroll-snap-align: start; 
+    scroll-snap-stop: always; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+    width: 100%; 
+    box-sizing: border-box;  
+    justify-content: flex-start;  
+    padding-top: 2.5rem;  
+    padding-bottom: 2rem; 
+    min-height: var(--app-height); 
+    position: relative;  
+} 
+
+.scroll-section::before { 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%;        
+    height: 100%;                  
+    color: #662B40; 
+    z-index: 0;                   
+    pointer-events: none; 
+} 
+
+
+.project-ticket-body { 
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+} 
+.project-header{
+    margin: 0 1rem;
+}
+.project-title-header { 
+    display: flex; 
+    justify-content: space-between; 
+    margin:  0 0 1rem 0;
+    align-items: flex-end;
+} 
+
+.img-svg{
+    width:auto;
+}
+.project-title{
+    font-size:2.1rem;
+    line-height: 2.5rem;
+    
+}
+.subtitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-tag {
+    font-size: 1.25rem; 
+} 
+
+.item-svg { 
+    gap:0.5rem;
+    width: 32px; 
+    margin-right: 0.7rem;
+    margin-bottom:0.7rem;
+} 
+
+
+.items-wrap { 
+    margin: 1rem 0 0.5rem 0; 
+} 
+
+.nimbo-delay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    width: auto; 
+    z-index: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end; 
+    pointer-events: none; 
+} 
+
+.project-gif-media { 
+    background-color: #F0F3F9; 
+    width: 480px; 
+    height: auto;
+} 
+
+.project-summary { 
+    background-color: var(--card); 
+    border-radius: 25px; 
+    padding: 1rem 1.5rem 1rem 1.5rem; 
+    color: var(--text-secondary); 
+} 
+
+.project-cover-default { 
+    width: calc(100% + 4rem); 
+    margin-left: -2rem; 
+    margin-right: -2rem; 
+    display: block; 
+    object-fit: cover; 
+    height: 250px; 
+} 
+
+/* SECOND SREEN: DEMOS & IMAGES */
+.scroll-section-demo { 
+    scroll-snap-align: start; 
+    scroll-snap-stop: always; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 2rem;   
+    justify-content: flex-start;   
+    min-height: var(--app-height);
+    position: relative;   
+    box-sizing: border-box;
+    background-color: #4D2030;
+    overflow: hidden;
+    margin-left: -2rem !important; 
+    margin-right: -2rem !important; 
+    padding: 2rem;
+} 
+
+.scroll-section-demo .project-body { 
+    width: 100% !important; 
+    height: 100% !important; 
+} 
+
+.project-body {
+    display: flex;
+    margin-top:2rem;
+
+}
+
+.phone-mockup-wrapper { 
+    position: relative; 
+    height: min(72dvh, calc(var(--app-height) - 4.5rem)); 
+    aspect-ratio: 450 / 920; 
+    max-width: 86vw; 
+    margin: auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    box-sizing: border-box;
+    
+} 
+
+/* El marc (bezel) ocupa el 100% exacte del contenidor */
+.phone-bezel-frame { 
+    position: absolute; 
+    inset: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: fill; 
+    z-index: 3; 
+    pointer-events: none; /* Permet interactuar o no bloquejar el fons */
+} 
+
+/* El vídeo 1206x2622 encaixat al mil·límetre sota el bisell */
+.video-presentation { 
+    position: absolute; 
+    top: 2%;
+    left: 5%;
+    width: 90%; 
+    height: 96%; 
+    object-fit: cover; 
+    /* El radi s'escala proporcionalment a l'amplada del mòbil */
+    border-radius: clamp(30px, 8.5cqi, 50px); 
+    z-index: 1; 
+    margin: 0; 
+    overflow: hidden;
+}
+
+
+.images-flex-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(5, auto);  
+    padding: 0 1rem; 
+    gap: 0.5rem;                           
+    width: 100%;                      
+    margin: auto;                          
+    box-sizing: border-box; 
+    align-content: center;                 
+} 
+
+.grid-item { 
+    width: 100%; 
+    aspect-ratio: 16 / 9;                  
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-sizing: border-box; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); 
+    background-color: rgba(0, 0, 0, 0.15); 
+} 
+
+.grid-item img { 
+    width: 100%;                          
+    object-fit: cover;                     
+    display: block; 
+} 
+
+/* THIRD SCREEN: EXPLANATIONS */
+.scroll-section-description { 
+    scroll-snap-align: start; 
+    scroll-snap-stop: always; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem;   
+    justify-content: flex-start;   
+    position: relative;   
+    box-sizing: border-box;
+    padding: 1.5rem 1rem;
+    min-height: var(--app-height);
+    background-color: #4D2030;
+    overflow: hidden;
+    margin-left: -2rem !important; 
+    margin-right: -2rem !important;
+} 
+
+.project-description { 
+    width: 100% !important; 
+    height: 100% !important; 
+    margin: 0 !important; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 0 !important; 
+    box-sizing: border-box; 
+} 
+
+.highlighted-word { 
+    color: var(--text-main);  
+    font-weight: 700; 
+} 
+.explanation1-ticket-body{
+    padding: 1rem 2rem; 
+}
+.explanation2-ticket-body{
+    padding: 0.5rem 2rem;
+}
+
+.explanation1-ticket-body, .explanation2-ticket-body { 
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+} 
+
+
+.project-explanation2 { 
+    color: var(--text-secondary); 
+    line-height: 1.6rem; 
+    font-size: 1rem; 
+    white-space: pre-line;
+} 
+
+.img-icons-svg { 
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+    padding: 1.5rem 0 0 0; 
+} 
+
+.img-icon3-svg { 
+    width: 100%; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none; 
+} 
+
+.project-question-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid #F0F3F9;
+    padding: 1rem;
+    border-radius: 12px;
+} 
+
+.question-text {
+    color: #F0F3F9;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.45rem;
+    margin: 0;
+} 
+
+/*  FOURTH SCREEN: NIMBO VISUAL IDENTITY  */
+.scroll-section-visual-identity {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: var(--app-height);
+    position: relative;
+    background-color: #F4F7FC;
+    overflow: hidden;
+    margin-left: -2rem !important; 
+    margin-right: -2rem !important; 
+}
+
+.visual-identity-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+    padding:0rem 3rem;
+    box-sizing: border-box;
+}
+
+.section-main-heading {
+    font-size: 1.6rem;
+    padding: 0rem 0 0.5rem 0;
+    color: #4D2030;
+    margin: 0 0 0.1rem 0.2rem;
+}
+
+.visual-identity-desktop-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.visual-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+}
+
+.visual-right-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.top-card-container,
+.production-top-card,
+.game-top-card {
+    position: relative;
+}
+
+
+.slider-nav-btn {
+    display: none;
+}
+.top-card-container {
+    background: #FFFFFF;
+    border-radius: 28px;
+    box-shadow: 0 4px 20px rgba(77, 32, 48, 0.05);
+    padding: 1rem 1.25rem 0rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    height: 260px;
+    box-sizing: border-box;
+}
+
+.slides-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.slides-track::-webkit-scrollbar {
+    display: none;
+}
+
+.slide-item {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 210px;
+    justify-content: space-between;
+}
+
+.slide-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    margin-top:0.5rem;
+
+}
+
+.slide-media-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide-img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.slide-item.item-full-space {
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.slide-media-box.media-box-full {
+    flex: 1;
+    height: 100%;
+    max-height: 185px; 
+    padding: 0;
+}
+
+.slide-img.slide-img-full {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 180px; 
+    object-fit: contain; 
+    display: block;
+}
+
+.multi-img-wrap {
+    display: flex;
+    gap: 1.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-img-multi {
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.panning-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.panning-track {
+    display: flex;
+    width: max-content;
+}
+
+.panning-img {
+    height: 160px;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+    padding: 0 1rem 0 0;
+}
+
+.slide-font-tag {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.55rem;
+}
+
+.font-lbl {
+    font-size: 0.9rem;
+    color: #8c7880;
+    line-height: 1;
+}
+
+.font-val {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4D2030;
+    margin-top: 2px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.dot-pill {
+    height: 4px;
+    width: 5px;
+    background-color: #d1c7cb;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+    padding: 0;
+}
+
+.dot-pill.is-active {
+    width: 20px;
+    background-color: #4D2030;
+}
+
+.bento-card, .bento-card-process {
+    background: #FFFFFF;
+    border-radius: 22px;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(77, 32, 48, 0.04);
+    transition: transform 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative; 
+    overflow: hidden;
+}
+
+.bento-card:active {
+    transform: scale(0.97);
+}
+
+.card-wide {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:2rem 1rem;
+}
+
+.card-wide .bento-card-title {
+    color:var(--text-tertiary);
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    z-index: 1;
+    margin: -0.7rem 0 -0.3rem 0rem;
+}
+
+.card-half {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.card-half .bento-card-title, .card-process .bento-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+}
+
+.dashboard-preview-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.arch-info-preview-wrap{
+    margin-top: -1rem;
+
+}
+.dash-icons {
+    margin-top:1rem;
+    height: 20px;
+    width: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.dash-map {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.95;
+}
+
+.bento-play-svg, .bento-data-svg {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    display: block;
+}
+
+/* FOURTH SCREEN: THE FLAT'S SOFA PRODUCTION  */
+.scroll-section-production {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    min-height: var(--app-height);
+    position: relative;
+    background-color: #4D2030;
+    overflow: hidden;
+    margin-left: -2rem !important; 
+    margin-right: -2rem !important; 
+}
+
+.production-wrapper {
+    padding: 0rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.production-main-heading {
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+    padding: 0rem 0 0.5rem 0;
+    margin: 0 0 0.1rem 0.2rem;
+}
+
+.production-top-card, .game-top-card {
+    background: var(--card);
+    border-radius: 28px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    padding: 1.25rem 1.25rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+.production-slides-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.production-slides-track::-webkit-scrollbar {
+    display: none;
+}
+
+.production-slide-item {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.production-slide-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-top:0.5rem;
+}
+
+.production-media-box {
+    width: 100%;
+    height: 225px;
+    max-height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 0 0.5rem 0rem 0.5rem;
+    box-sizing: border-box;
+}
+
+.production-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; 
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.production-multi-wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 0.5rem;
+}
+
+.production-img-half {
+    width: calc(50% - 0.25rem);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.production-footer {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.production-tag-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.production-tag-info.is-empty {
+    visibility: hidden;
+    height: 38px;
+}
+
+.prod-lbl {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    line-height: 1;
+}
+
+.prod-val {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.production-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 0.25rem;
+}
+
+.prod-dot-pill {
+    height: 4px;
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+    padding: 0;
+}
+
+.prod-dot-pill.is-active {
+    width: 20px;
+    background-color: var(--text-main);
+}
+
+.production-bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.production-bento-card {
+    background: var(--card);
+    border-radius: 22px;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    box-sizing: border-box;
+}
+
+.production-bento-card:active {
+    transform: scale(0.97);
+}
+
+.production-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+
+    line-height: 1.25;
+}
+
+.prod-play-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    display: block;
+    color: var(--text-tertiary);
+}
+
+/* FOURTH SCREEN: POKETES & MEDIRUSH  */
+.scroll-section-game {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0rem 2rem;
+    min-height: var(--app-height);
+    position: relative;
+    background-color: #4D2030;
+    overflow: hidden;
+    margin-left: -2rem !important; 
+    margin-right: -2rem !important; 
+}
+
+.game-wrapper {
+    padding: 0rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.game-main-heading {
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+    padding: 0rem 0 0.5rem 0;
+    margin: 0 0 0.1rem 0.2rem;
+}
+
+.game-slides-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.game-slides-track::-webkit-scrollbar {
+    display: none;
+}
+
+.game-slide-item {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.65rem;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.game-slide-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-top:0.5rem;
+}
+
+.game-media-box {
+    width: 100%;
+    height: 225px;
+    max-height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: rgba(0, 0, 0, 0); 
+    padding: 0 0.5rem 0rem 0.5rem;
+    box-sizing: border-box;
+}
+
+.game-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; 
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.game-multi-wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-img-half {
+    width: calc(50% - 0.25rem);
+    height: 100%;
+    object-fit: contain;
+}
+
+.game-footer {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.game-tag-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-tag-info.is-empty {
+    visibility: hidden;
+    height: 38px;
+}
+
+.game-lbl {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    line-height: 1;
+}
+
+.game-val {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.game-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 0.25rem;
+}
+
+.game-dot-pill {
+    height: 4px;
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+    padding: 0;
+}
+
+.game-dot-pill.is-active {
+    width: 20px;
+    background-color: var(--text-main);
+}
+
+.game-bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.game-bento-card {
+    background: var(--card);
+    border-radius: 22px;
+    padding: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    box-sizing: border-box;
+}
+
+.game-bento-card:active {
+    transform: scale(0.97);
+}
+
+.game-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.25;
+}
+
+.game-play-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    display: block;
+    color: var(--text-tertiary);
+}
+.production-desktop-layout,
+.game-desktop-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+}
+
+.production-left-col,
+.game-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.production-right-col,
+.game-right-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+/* POP-UP MODAL (COMÚ) */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 19, 27, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.modal-dialog-content {
+    background: var(--card);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 24px;
+    padding: 1.25rem;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.modal-title {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.2rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--text-main);
+    padding-right: 0.5rem;
+    line-height: 1;
+}
+
+.modal-body-scroll {
+    overflow-y: auto;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.modal-video-player {
+    width: 100%;
+    max-height: 65vh;
+    border-radius: 14px;
+    outline: none;
+    display: block;
+}
+
+.modal-placeholder {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #8c7880;
+    font-size: 0.9rem;
+}
+
+
+.modal-carousel-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image-viewport {
+    width: 100%;
+    min-height: 250px;
+    max-height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.modal-img-slide {
+    width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+}
+
+.modal-controls-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 0.85rem;
+    width: 100%;
+}
+
+.modal-arrow-btn {
+    position: static;
+    transform: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--card);
+    color: var(--text-main);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.modal-arrow-btn:active {
+    transform: scale(0.9);
+}
+
+.modal-arrow-prev {
+    padding-right: 2px;
+}
+
+.modal-arrow-next {
+    padding-left: 2px;
+}
+
+.modal-pagination-counter {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    letter-spacing: 0.05em;
+    min-width: 45px;
+    text-align: center;
+}
+.project-detail-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.detail-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--card);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 50;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-bottom-nav .nav-item {
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease;
+}
+
+.detail-bottom-nav .nav-item:hover,
+.detail-bottom-nav .nav-item.active {
+    color: var(--text-main);
+}
+
+.scroll-section-process {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: var(--app-height);
+    position: relative;
+    background-color: #F4F7FC;
+    overflow: hidden;
+    margin-left: -2rem !important; 
+    margin-right: -2rem !important;
+}
+
+.process-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+    padding:0rem 3rem;
+    box-sizing: border-box;
+}
+
+.process-desktop-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.process-left-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.process-right-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.process-card-dashboard {
+    height: 260px;
+}
+
+.card-process{    
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;}
+
+.scroll-section-final {
+    scroll-snap-align: start; 
+    scroll-snap-stop: always; 
+    left:0;
+    box-sizing: border-box;  
+    justify-content: flex-start;   
+    min-height: var(--app-height); 
+    position: absolute; 
+    width:100%;
+}
+
+.final-wrapper {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+    height:calc(100dvh - 150px);
+
+}
+
+.final-main-heading{
+    text-align: center;
+}
+.final-icon-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transform-origin: center center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.final-icon-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.final-icon-link:active {
+    transform: scale(0.96);
+}
+
+.final-icon {
+    display: block;
+    width: auto;
+    max-height: 110px;
+    object-fit: contain;
+}
+
+
+
+@media (min-width: 768px) {
+    .bg-project-detail-svg {
+        position: absolute;
+        height: 75vh;
+        z-index: 1;
+        pointer-events: none;
+        display: block;
+    }
+
+    .project-detail-container {
+        padding: 0 2rem;
+    }
+
+    .project-ticket-body {
+        padding-top: 2rem;
+    }
+
+    .project-title {
+        font-size: 3rem;
+    }
+
+    .project-tag {
+        font-size: 1.6rem;
+    }
+
+    .project-gif-media {
+        width: calc(100% + 4rem);
+    }
+
+    .project-body {
+        display: flex;
+    }   
+
+    .images-flex-grid { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(4, auto);   
+        gap: 1.5rem;                                              
+        margin: auto;                          
+        box-sizing: border-box; 
+        align-content: center;                 
+    } 
+
+
+    .explanation1-ticket-body { 
+        padding-bottom: 2rem; 
+        padding-top: 1rem; 
+    } 
+
+    .project-explanation2 {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+
+    .img-icons-svg { 
+        width: 50%; 
+        transform: translateX(50%);
+    } 
+
+    .img-icon3-svg {
+        width: 100%;
+    }
+
+    .section-main-heading, .production-main-heading, .game-main-heading {
+        font-size: 2rem;
+    }
+    .slider-nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #f7faff;
+        color: #4D2030;
+        border: none;
+        box-shadow: 0 4px 12px #1c2a3a22;
+        font-size: 2rem;
+        font-weight: bold;
+        padding: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .slider-nav-btn:hover {
+        background: #FFFFFF;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-nav-btn.prev {
+        left: 0.6rem;
+        margin-left:2rem;
+    }
+
+    .slider-nav-btn.next {
+        right: 0.6rem;
+        margin-right:2rem;
+    }
+
+    .production-top-card .slider-nav-btn,
+    .game-top-card .slider-nav-btn {
+        background: var(--card);
+        color: var(--text-main);
+        border: none;
+    }
+
+    .production-top-card .slider-nav-btn:hover,
+    .game-top-card .slider-nav-btn:hover {
+        background: #4D2030;
+
+    }
+
+    .top-card-container {
+        height: 340px;
+        padding: 2rem;
+    }
+
+    .slide-item {
+        height: 260px;
+    }
+
+    .slide-img {
+        height:100%;
+    }
+    .slide-img-multi{
+        height:300px;
+    }
+    .production-top-card, .game-top-card {
+        height: 440px;
+    }
+
+    .production-media-box, .game-media-box {
+        max-height: 280px;
+        height: 280px;
+    }
+
+    .bento-grid, .production-bento-grid, .game-bento-grid {
+        gap: 1.75rem;
+    }
+
+    .bento-card, .production-bento-card, .game-bento-card, .card-process {
+        min-height: 180px;
+        padding: 1.5rem;
+    }
+
+    .card-wide {
+        min-height: 120px;
+    }
+
+    .modal-dialog-content {
+        max-width: 700px;
+    }
+    .info-arch-icons{
+        margin: 1rem 0 0 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bg-project-detail-svg{
+        height:85vh;
+    }
+    
+    .desktop-mockup-wrapper {
+        max-width: 980px;
+    }
+    
+    .images-flex-grid { 
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: repeat(3, auto);   
+        gap: 1.5rem;                                                
+        margin: auto;                          
+        box-sizing: border-box; 
+        align-content: center;               
+    } 
+
+    .img-icons-svg { 
+        width: 25%; 
+        transform: translateX(150%);
+    } 
+
+    .section-main-heading {
+        font-size: 2.4rem !important;
+        margin: 0 0 0.5rem 0.2rem !important;
+    }
+
+    .visual-identity-desktop-layout {
+        display: grid !important;
+        grid-template-columns: 3fr 1fr !important; 
+        column-gap: 2.5rem !important;
+        
+    }
+
+    .visual-left-col {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
+    .top-card-container {
+        margin: 0 !important;
+        padding: 3rem 2rem 0 2rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .slide-item {
+        height: 230px !important;
+    }
+
+    .slide-media-box.media-box-full {
+    max-height: 1000px; 
+
+    }
+
+    .slide-img{
+        height: 100% !important;
+    }
+    .slide-img-multi {
+        height: 500px;
+    }
+
+    .slide-img.slide-img-full {
+    max-height: 250px; 
+    object-fit: contain; 
+    display: block;
+    }
+
+    .panning-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .panning-track {
+        display: flex;
+        width: max-content;
+    }
+
+    .panning-img {
+        height: 250px;
+        width: auto;
+        flex-shrink: 0;
+        display: block;
+        padding: 0 1rem 0 0;
+    }
+
+    .slide-font-tag {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    }
+
+    .slider-dots {
+        margin: 0.8rem 0 1rem 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-wide {
+        height: 150px !important;
+        min-height: 150px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .card-wide .bento-card-title {
+        font-size: 1.3rem !important;
+        margin: 0 !important;
+    }
+
+    .dash-map {
+        width: 30%;
+    
+    }
+    
+    .visual-right-col {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 100% !important; /* 100% de la cel·la d'1fr */
+        min-width: 0 !important;
+        height: 95% !important;
+        gap: 1.5rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .card-half{
+        flex: 1 !important;
+        height: auto !important;
+        min-height: 200px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .card-half .bento-card-title, .card-process .bento-card-title {
+        font-size: 1.25rem !important;
+        margin: 0 !important;
+    }
+    
+    .modal-dialog-content {
+        max-width: 1400px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .bg-project-detail-svg{
+        height:67vh;
+    }
+    .project-cover-default { 
+        height: 400px; 
+    } 
+    .nimbo-delay { 
+        margin-left: -2rem;
+        margin-right: -2rem;
+    }
+
+    .phone-mockup-wrapper {
+        height: min(78vh, 720px);
+        aspect-ratio: 450 / 920;
+        max-width: unset;
+        margin: auto;
+    }
+
+    /* Mantenim el vídeo de mòbil clavat dins del bezel glacier */
+    .phone-mockup-wrapper .video-presentation {
+        border-radius: 40px;
+    }
+
+    /* 2. Projecte Nimbo a PC (Desktop frame / MacBook frame) */
+    .desktop-mockup-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 780px;
+    aspect-ratio: 16 / 10;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-bezel-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.video-presentation-desktop {
+    position: absolute;
+    top: 9.5%;
+    left: 11.5%;
+    width: 77%;
+    height: 77%;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 0;
+    z-index: 1;
+}
+
+    .explanation1-ticket-body {  
+        padding-top: 3rem; 
+    }
+    .images-flex-grid { 
+        width:100%;               
+    } 
+
+    .img-icons-svg { 
+        width: 25%; 
+        transform: translateX(150%);
+    } 
+
+    .section-main-heading {
+        font-size: 2.4rem !important;
+        margin: 0 0 0.5rem 0.2rem !important;
+    }
+
+    /* COLUMNA ESQUERRA (75%) */
+    .visual-left-col {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 100% !important; /* 100% de la cel·la de 3fr */
+        min-width: 0 !important; /* Evita que el carrusel desbordi la graella */
+    }
+
+    .top-card-container {
+        margin: 0 !important;
+        padding: 1.1rem 2rem 0 2rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .slide-item {
+        height: 300px !important;
+    }
+
+    .slide-media-box.media-box-full {
+    max-height: 1000px; 
+
+    }
+
+    .slide-img{
+        height: 100% !important;
+    }
+    .slide-img-multi {
+        height: 500px;
+    }
+
+    .slide-img.slide-img-full {
+    max-height: 250px; 
+    object-fit: contain; 
+    display: block;
+    }
+
+    .panning-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .panning-track {
+        display: flex;
+        width: max-content;
+    }
+
+    .panning-img {
+        height: 250px;
+        width: auto;
+        flex-shrink: 0;
+        display: block;
+        padding: 0 1rem 0 0;
+    }
+
+    .slide-font-tag {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    }
+
+    .slider-dots {
+        margin: 0.8rem 0 1rem 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-wide {
+        height: 190px !important;
+        min-height: 190px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .card-wide .bento-card-title {
+        font-size: 1.3rem !important;
+        margin: 0 !important;
+    }
+
+    .dash-map {
+        width: 25%;
+    }
+
+    .dash-icons {
+    height: 30px;
+    width: auto;
+    }
+    /* COLUMNA DRETA (25%) */
+    .visual-right-col {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 100% !important; /* 100% de la cel·la d'1fr */
+        min-width: 0 !important;
+        height: 100% !important;
+        gap: 1.5rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .card-half {
+        flex: 1 !important;
+        height: auto !important;
+        min-height: 280px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .card-process{
+        flex: 1 !important;
+        height: auto !important;
+        
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;        
+    }
+    .card-half .bento-card-title {
+        font-size: 1.25rem !important;
+        margin: 0 !important;
+    }
+    .bento-play-svg, .bento-data-svg{
+        height:30px;
+        width: 30px;
+    }
+
+    .scroll-section-production,
+    .scroll-section-game {
+        padding: 3rem 4rem !important;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible !important;
+    }
+
+    .visual-identity-wrapper{
+        margin: 0 0;
+    }
+    .production-wrapper,
+    .game-wrapper {
+        width: 100% !important;
+        margin: 0 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .production-main-heading,
+    .game-main-heading {
+        font-size: 2.4rem !important;
+        margin: 0 0 0.5rem 0.2rem !important;
+    }
+
+    /* GRAELLA 75% ESQUERRA / 25% DRETA */
+    .production-desktop-layout,
+    .game-desktop-layout {
+        display: grid !important;
+        grid-template-columns: 3fr 1fr !important; /* 75% i 25% */
+        column-gap: 2.5rem !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* COLUMNA ESQUERRA (75%): Card gran + Dots */
+    .production-left-col,
+    .game-left-col {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .production-top-card,
+    .game-top-card {
+        height: 580px !important; /* Alçada per igualar les 2 targetes de la dreta */
+        margin: 0 !important;
+        padding: 2.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .production-media-box,
+    .game-media-box {
+        height: 420px !important;
+        max-height: 420px !important;
+    }
+
+    .production-slider-dots,
+    .game-slider-dots {
+        margin-top: 1rem !important;
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* COLUMNA DRETA (25%): 2 files apilades verticalment */
+    .production-right-col,
+    .game-right-col {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: none !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 580px !important; /* Mateixa alçada exacta que la targeta de l'esquerra */
+        gap: 1.5rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .production-bento-card,
+    .game-bento-card {
+        flex: 1 !important;
+        height: calc(50% - 0.75rem) !important;
+        min-height: unset !important;
+        margin: 0 !important;
+        width: 100% !important;
+        padding: 2rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .production-card-title,
+    .game-card-title {
+        font-size: 1.35rem !important;
+        margin-left: 0 !important;
+    }
+    
+    .process-desktop-layout {
+        display: grid !important;
+        grid-template-columns: 3fr 1fr !important;
+        column-gap: 2.5rem !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        height:600px !important;
+    }
+
+    .process-left-col {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .process-card-dashboard {
+        height: 100% !important;
+        margin: 0 !important;
+        width: 100% !important;
+        border-radius: 28px !important;
+        box-sizing: border-box !important;
+    }
+
+    .process-right-col {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: none !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        gap: 1.5rem !important;
+        box-sizing: border-box !important;
+        
+    }
+
+    .process-right-col .card-half {
+        flex: 1 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .modal-img-single{
+        position: relative;
+        height:auto;
+        max-width:85%;  
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    .phone-mockup-wrapper {
+        height: min(78vh, 760px);
+    }
+    
+    .desktop-mockup-wrapper {
+        max-width: 1050px;
+    }
+}
