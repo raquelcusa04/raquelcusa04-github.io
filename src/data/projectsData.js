@@ -206,7 +206,7 @@ export const projectsData = [
         {
         id: "short-film",
         title: "Final Short Film",
-        videoSrc: "/work/sofa/final-short-film.mp4",
+        videoSrc: "/work/sofa/sofa-film.mp4",
         previewPlay: "/work/nimbo/motion-graphics-icon.svg"
         },
         {
@@ -365,7 +365,7 @@ export const projectsData = [
         {
         id: "demo",
         title: "Game Demo",
-        videoSrc: "/work/medirush/game-demo.mp4",
+        videoSrc: "/work/medirush/game-demo-video.mp4",
         previewPlay: "/work/nimbo/motion-graphics-icon.svg"
         }
     ]
