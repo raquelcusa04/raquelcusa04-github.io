@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -11,7 +11,7 @@ import ProjectDetail from './pages/ProjectDetail';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <ScrollToTop />
       <div className="app-container">
         
@@ -28,6 +28,6 @@ export default function App() {
         
         <Navbar />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
