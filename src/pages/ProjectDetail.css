@@ -145,7 +145,7 @@
     overflow: hidden;
     margin-left: -2rem !important; 
     margin-right: -2rem !important; 
-    padding: 2rem;
+    padding: 0 2rem;
 } 
 
 .scroll-section-demo .project-body { 
